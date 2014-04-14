@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 
 	//@Override
 	//This is new stuff
+	// new comment
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
