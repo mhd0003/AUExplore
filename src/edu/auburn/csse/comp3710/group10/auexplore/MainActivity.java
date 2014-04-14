@@ -13,6 +13,9 @@ import android.os.Build;
 
 public class MainActivity extends Activity {
 
+	@Override
+	//This is new stuff
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +27,7 @@ public class MainActivity extends Activity {
                     .commit();
         }
     }
-
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
