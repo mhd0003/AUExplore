@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-// Import the library below into Eclipse
-// <android-sdk>/extras/google/google_play_services/libproject/google-play-services_lib/
-// Then right-click project -> Properties -> Android -> Library -> Add
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
