@@ -159,5 +159,25 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 			map.addMarker(new MarkerOptions().position(markers.get(i)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 		}
 	}
+	
+	private double distanceBetween(LatLng first, LatLng second) {
+		float[] results = new float[1];
+		Location.distanceBetween(first.latitude, first.longitude, second.latitude, second.longitude, results);
+		return (double) results[0];
+	}
+	
+	private boolean atLocation(LatLng location) {
+		Location currentLocation = locationManager.getLastKnownLocation(locationProvider);
+		LatLng currLatLng = new LatLng(location.latitude, location.longitude);
+		double accuracy = (double) currentLocation.getAccuracy();
+		if (accuracy != 0) {
+			double distance = distanceBetween(currLatLng, location);
+			return distance <= accuracy;
+		}
+		else {
+			// TODO: What if no accuracy info?
+			return false;
+		}
+	}
 
 }
