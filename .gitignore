@@ -11,4 +11,5 @@ target/
 gen
 project.properties
 lint.xml
-
+.settings
+.classpath
