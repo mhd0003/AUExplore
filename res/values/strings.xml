@@ -5,4 +5,39 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="descriptions">
+        <item>A group of state-of-the-art buildings forming a complex that serves as the hub of the engineering campus. Construction on the buildings ended in early 2011. The center supports multidisciplinary collaboration to advance technology in transportation and other important and emerging areas of engineering. Named for U.S. Senator Richard Shelby, it holds research laboratories, classrooms, lecture halls and administrative offices. When completed, the center will comprise nearly 200,000 square feet.</item>
+        <item>Home to the AU Department of Electrical Engineering. Completed in 1984, Broun Hall was named after the university\'s fourth president, William Leroy Broun. A Virginia scholar, scientist and teacher, Broun helped bring Auburn to the forefront of scientific institutions in the South during his tenure as president.</item>
+        <item>In August 2007 Auburn University rededicated its aerospace engineering building in honor of distinguished Auburn alumnus Charles E. “Buddy” Davis. The building, which houses the Department of Aerospace Engineering, will now be called the Charles E. Davis Aerospace Engineering Hall, or simply Davis Hall.</item>
+        <item>Lowder Business Building was designed to bring all activities of the college under one roof on the former site of Magnolia and Bullard Halls, which were razed in the late 1980’s after they became obsolete. Lowder was completed in 1992 and is utilized for the classrooms and offices of the College of Business. </item>
+        <item>Foy Hall, named for the late James E. Foy, a beloved former dean, contains a food court with five vendor choices. Freshman Year Experience, Study Abroad, and International Education have their offices here. </item>
+        <item>A gathering place for Auburn students, the Student Center was completed in 2008. Auburn has more than 300 student organizations; many of their offices are housed here, as well as the Office of the Vice President for Student Affairs. The facility houses seven dining options including a full-service Starbucks. Foy Information Desk, just inside the entrance to the Student Center, was featured in Oprah’s O Magazine and on The Today Show as one of the top 10 phone numbers to have in your cell phone.</item>
+        <item>Haley Center is home to the College of Education and many of Auburn’s freshman core classes. Classrooms are located on the first two floors, while the tallest part of the building serves as faculty offices. Professors hold scheduled office hours on a weekly basis to meet with students. The College of Education has 23 bachelor’s degree options. The pedestrian area in front of Haley Center is commonly referred to as “The Concourse.” The University Bookstore is located on the first floor of Haley Center.</item>
+        <item>Donald E. Davis led efforts to establish the Arboretum in 1963. With an extensive collection of native plants, an abundance of wildlife and an open-air pavilion, it is an ideal place for many types of environmental education.</item>
+        <item>Begun in 1939, the stadium seats 85,000. It was named for Ralph \"Shug\" Jordan and Clifford Leroy Hare. Jordan, a legendary football coach for over two decades at Auburn, retired in 1975 as Auburn\'s winningest coach. Hare, who played on Auburn\'s first football team in 1892, was dean of the School of Chemistry and state chemist from 1930 until 1948.</item>
+        <item>Completed in 2010, this $92 million facility has a capacity of 9,600, including over 29,000 square feet of student-athlete space, a two-court practice facility, coaches\' offices, the Auburn University Athletic Ticket Office, an AU Team Store, the Lovelace Museum, two food courts and many other amenities.</item>
+        <item>Built in 1915, Cater Hall originally served as the President\'s Home. It is named for Katharine Cooper Cater, dean of women from 1946 until 1976, and dean of student life from 1976 until her death in 1980. The Social Center at Auburn University, now designated by the Board of Trustees as Katharine Cooper Cater Hall, was erected in 1915 to serve as the President\'s home. The stately, two-story, neo-classical building was designed by Joseph Hudnut.</item>
+        <item>The first of two buildings to provide modern facilities in chemistry, this building houses classroom and laboratory facilities for student instruction as well as faculty offices and meeting rooms.</item>
+        <item>The center for math and sciences. Parker Hall was built in 1963 and was named after William Vann Parker. Its current use has computer centers and classrooms for math, chemistry, and physics. </item>
+        <item>The Village housing area was completed in 2009 and consists of eight residence halls set up as super-suites with four private bedrooms, two shared bathrooms, and a common living/dining area. Auburn’s 17 social sororities are housed in three of the buildings and a fourth building houses Honors College students. Four buildings are co-educational housing for freshmen and upperclassmen.</item>
+        <item>The site of Southeastern Conference baseball excitement since 1950, Samford Stadium-Hitchcock Field at Plainsman Park was voted the best collegiate baseball facility in the country by Baseball America prior to the 2003 season.</item>
+    </string-array>
+    <string-array name="names">
+        <item>Shelby Center</item>
+        <item>Broun Hall</item>
+        <item>Davis Hall</item>
+        <item>Lowder Business Building</item>
+        <item>Foy Dining</item>
+        <item>Student Center</item>
+        <item>AU BookStore/Haley</item>
+        <item>Arboretum</item>
+        <item>Jordan-Hare</item>
+        <item>Auburn Arena</item>
+        <item>Cater Hall</item>
+        <item>Chemistry Building</item>
+        <item>Parker Hall</item>
+        <item>The Village</item>
+        <item>Plainsman Park</item>
+    </string-array>
+
 </resources>
