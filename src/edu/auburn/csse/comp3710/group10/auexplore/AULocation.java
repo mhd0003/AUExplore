@@ -8,8 +8,15 @@ public class AULocation {
 	private String name;
 	private String description;
 	private int pointVal;
+	boolean isFound;
 	
 	
+	public boolean isFound() {
+		return isFound;
+	}
+	public void setFound(boolean isFound) {
+		this.isFound = isFound;
+	}
 	public LatLng getLatLng() {
 		return latLng;
 	}
