@@ -8,7 +8,7 @@ public class AULocation {
 	private String name;
 	private String description;
 	private int pointVal;
-	boolean isFound;
+	private boolean isFound;
 	
 	
 	public boolean isFound() {

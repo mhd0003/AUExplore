@@ -2,4 +2,5 @@
 <resources>
    <color name="au_orange">#ec6313</color> 
    <color name="au_blue">#001e54</color>
+   <color name="black">#000000</color>
 </resources>

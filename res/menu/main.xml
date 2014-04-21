@@ -3,9 +3,15 @@
     tools:context="edu.auburn.csse.comp3710.group10.auexplore.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:id="@+id/travel_log"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_menu_myplaces"
+        android:title="@string/travel_log"/>
+    
+    <item
+       android:id="@+id/achievements"
+       android:showAsAction="always"
+       android:icon="@drawable/ic_menu_star"
+       android:title="@string/achievements"/> 
 
 </menu>

@@ -2,8 +2,8 @@
 <resources>
 
     <string name="app_name">AU Explore</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="travel_log">Travel Log</string>
+    <string name="achievements">Achievements</string>
 
     <string-array name="descriptions">
         <item>A group of state-of-the-art buildings forming a complex that serves as the hub of the engineering campus. Construction on the buildings ended in early 2011. The center supports multidisciplinary collaboration to advance technology in transportation and other important and emerging areas of engineering. Named for U.S. Senator Richard Shelby, it holds research laboratories, classrooms, lecture halls and administrative offices. When completed, the center will comprise nearly 200,000 square feet.</item>
