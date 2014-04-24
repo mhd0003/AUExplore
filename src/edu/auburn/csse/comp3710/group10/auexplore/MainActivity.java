@@ -25,6 +25,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -53,14 +54,14 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 	String locationProvider;
 	private LatLng currentLatLng;
 	private final String LOCATIONS_FILE_NAME = "AULocations.json";
-	private LatLng[] markersArray = {new LatLng(32.606034, -85.487478), new LatLng(32.604924, -85.486713),
-											new LatLng(32.605852, -85.483075), new LatLng(32.605798, -85.488953),
-											new LatLng(32.604766, -85.484863), new LatLng(32.602487, -85.486959),
-											new LatLng(32.603395, -85.486793), new LatLng(32.595024, -85.483477),
-											new LatLng(32.603170, -85.490397), new LatLng(32.603181, -85.490632),
-											new LatLng(32.603336, -85.484822), new LatLng(32.599580, -85.485168),
-											new LatLng(32.600493, -85.486382), new LatLng(32.604048, -85.493804),
-											new LatLng(32.599587, -85.490317)};
+	private LatLng[] markersArray = {new LatLng(32.60633, -85.48747), new LatLng(32.60486, -85.48632),
+											new LatLng(32.60584, -85.48336), new LatLng(32.60628, -85.48902),
+											new LatLng(32.60449, -85.48524), new LatLng(32.60228, -85.48658),
+											new LatLng(32.603395, -85.48624), new LatLng(32.59599, -85.48351),
+											new LatLng(32.60162, -85.48801), new LatLng(32.60277, -85.49186),
+											new LatLng(32.60347, -85.48483), new LatLng(32.59959, -85.48537),
+											new LatLng(32.60087, -85.48647), new LatLng(32.60402, -85.49243),
+											new LatLng(32.60043, -85.49002)};
 	private final String[] descriptions = {"A group of state-of-the-art buildings forming a complex that serves as the hub of the engineering campus. Construction on the buildings ended in early 2011. The center supports multidisciplinary collaboration to advance technology in transportation and other important and emerging areas of engineering. Named for U.S. Senator Richard Shelby, it holds research laboratories, classrooms, lecture halls and administrative offices. When completed, the center will comprise nearly 200,000 square feet.",
 			"Home to the AU Department of Electrical Engineering."
 			+ "Completed in 1984, Broun Hall was named after the university's fourth president, William Leroy Broun. A Virginia scholar, scientist and teacher, Broun helped bring Auburn to the forefront of scientific institutions in the South during his tenure as president.",
@@ -139,7 +140,10 @@ public class MainActivity extends FragmentActivity implements LocationListener {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.travel_log) {
+        	Intent intent = new Intent();
+			intent.setClass(getApplicationContext(), TravelLogActivity.class);
+			startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -203,8 +207,14 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 					public boolean onMarkerClick(Marker marker) {
 						if (atLocation(marker.getPosition())) {
 							Toast.makeText(getApplicationContext(), "Congratulations, you have added a location to your Travel Log!", Toast.LENGTH_LONG).show();
+							marker.remove();
+							markFound(marker.getTitle());
+							writeToJSON(LOCATIONS_FILE_NAME, locationList);
 							
 							// Launch Travel Log Activity
+							Intent intent = new Intent();
+							intent.setClass(getApplicationContext(), TravelLogActivity.class);
+							startActivity(intent);
 						}
 						else {
 							Toast.makeText(getApplicationContext(), "Get closer to the location to pick up the pin.", Toast.LENGTH_LONG).show();

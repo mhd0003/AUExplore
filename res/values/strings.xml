@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">AU Explore</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="travel_log">Travel Log</string>
+    <string name="achievements">Achievements</string>
 
 </resources>
