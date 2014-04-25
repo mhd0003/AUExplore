@@ -9,8 +9,15 @@ public class AULocation {
 	private String description;
 	private int pointVal;
 	private boolean isFound;
+	private int id;
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public boolean isFound() {
 		return isFound;
 	}

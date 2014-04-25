@@ -146,6 +146,12 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 			startActivity(intent);
             return true;
         }
+        else if (id == R.id.achievements){
+        	Intent intent = new Intent();
+        	intent.setClass(getApplicationContext(), AchievementActivity.class);
+        	startActivity(intent);
+        	return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -271,8 +277,11 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 			auLocation.setName(names[i]);
 			LatLng latLng = markersArray[i];
 			auLocation.setLatLng(latLng);
+
+			auLocation.setFound(true);
 			auLocation.setFound(false);
 			auLocation.setPointVal(pointVals.get(i));
+			auLocation.setId(i);
 			locationList.add(auLocation);
 		}
 	}

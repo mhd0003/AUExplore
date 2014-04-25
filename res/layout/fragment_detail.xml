@@ -6,12 +6,14 @@
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:orientation="vertical" >
         
 	    <ImageView 
 	        android:id="@+id/image"
 	        android:layout_height="wrap_content"
-	        android:layout_width="wrap_content"/>
+	        android:layout_width="wrap_content"
+	        android:layout_gravity="center_horizontal"/>
 	        
 	        
 	    <TextView style="?android:textAppearanceMedium"
@@ -21,6 +23,16 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="" />
+	    
+	    <Button
+	        android:id="@+id/button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginBottom="16dp"
+	        android:text="Get Directions"
+	        android:onClick="getDirections">
+	    </Button>
     
     </LinearLayout>
 </ScrollView>

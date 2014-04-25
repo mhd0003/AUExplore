@@ -40,7 +40,17 @@
             android:name="edu.auburn.csse.comp3710.group10.auexplore.TravelLogActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-        </activity>        
+        </activity>
+        <activity
+            android:name="edu.auburn.csse.comp3710.group10.auexplore.DetailViewActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>  
+        <activity
+            android:name="edu.auburn.csse.comp3710.group10.auexplore.AchievementActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>      
     </application>
 
 </manifest>

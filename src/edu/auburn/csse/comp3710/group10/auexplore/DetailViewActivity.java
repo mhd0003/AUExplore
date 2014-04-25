@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 public class DetailViewActivity extends FragmentActivity {
 	/**
@@ -24,11 +25,12 @@ public class DetailViewActivity extends FragmentActivity {
      * and next wizard steps.
      */
     private ViewPager mPager;
+    private int currentItem;
 
     /**
      * The pager adapter, which provides the pages to the view pager widget.
      */
-    private PagerAdapter mPagerAdapter;
+    private DetailPagerAdapter mPagerAdapter;
     private ArrayList<AULocation> locations = new ArrayList<AULocation>();
 
     @Override
@@ -51,6 +53,7 @@ public class DetailViewActivity extends FragmentActivity {
         mPager.setAdapter(mPagerAdapter);
         if (firstItem != -50) {
         	// get item from adapter blah blah blah
+        	mPager.setCurrentItem(firstItem);
         }
     }
     
@@ -82,7 +85,8 @@ public class DetailViewActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new DetailViewFragment();
+        	currentItem = position;
+            return DetailViewFragment.create(position);
         }
 
         @Override

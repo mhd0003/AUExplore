@@ -20,11 +20,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class TravelLogActivity extends ListActivity{
+public class AchievementActivity extends ListActivity{
 	private ArrayList<AULocation> locations;
 	private final String LOCATIONS_FILE_NAME = "AULocations.json";
-	private int foundCount = 0;
 	private String foundLocationList = "";
+	private final String[] achievements = {"Freshman", "Sophomore", "Junior", "Senior", "Congratulations! You've graduated!"};
+	private ArrayList<String> earnedAchievements = new ArrayList<String>();
+	private ArrayList<AULocation> foundLocations = new ArrayList<AULocation>();
 	
 	
 	@Override
@@ -32,7 +34,7 @@ public class TravelLogActivity extends ListActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
         ActionBar ab = getActionBar();
-        ab.setTitle("Travel Log");
+        ab.setTitle("Achievements");
     }
 	
 	@Override
@@ -40,43 +42,32 @@ public class TravelLogActivity extends ListActivity{
 		super.onResume();
 		
 		locations = getLocationList();
-        ArrayList<AULocation> foundLocations = new ArrayList<AULocation>();
-        foundCount = 0;
         for (int i = 0; i < locations.size(); i++) {
         	if (locations.get(i).isFound()) {
         		foundLocations.add(locations.get(i));
-        		foundCount++;
         	}
         }
         
-        String[] listItems = new String[foundCount];
-        for (int i = 0; i < foundCount; i++) {
-        	listItems[i] = foundLocations.get(i).getName();
+        int pointValue = getCurrentPointValue();
+        if (pointValue >= 10) {
+        	earnedAchievements.add(achievements[0]);
         }
-        Gson gson = new Gson();
-        foundLocationList = gson.toJson(foundLocations, new TypeToken<ArrayList<AULocation>>(){}.getType());
+        if (pointValue >= 25) {
+        	earnedAchievements.add(achievements[1]);
+        }
+        if (pointValue >= 50) {
+        	earnedAchievements.add(achievements[2]);
+        }
+        if (pointValue >= 75) {
+        	earnedAchievements.add(achievements[3]);
+        }
+        if (pointValue == 100) {
+        	earnedAchievements.add(achievements[4]);
+        }
         
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.listtext, listItems);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.listtext, earnedAchievements);
         setListAdapter(adapter);
         
-        ListView lv = (ListView) findViewById(android.R.id.list);
-        lv.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-					long arg3) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(), DetailViewActivity.class);
-				intent.putExtra("List", foundLocationList);
-				intent.putExtra("firstItem", position);
-				startActivity(intent);
-			}
-		});
-        
-        if (foundLocations.size() == 0) {
-        	Toast.makeText(getApplicationContext(), "Check back later after collecting pins from the map :)", Toast.LENGTH_LONG).show();
-        }
 	}
 	
 	private ArrayList<AULocation> getLocationList() {
@@ -111,5 +102,13 @@ public class TravelLogActivity extends ListActivity{
 			e.printStackTrace();
 		}
 		return contents;
+	}
+	
+	private int getCurrentPointValue() {
+		int points = 0;
+		for (int i = 0; i < foundLocations.size(); i++) {
+			points += foundLocations.get(i).getPointVal();
+		}
+		return points;
 	}
 }
